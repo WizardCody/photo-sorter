@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PhotoSorter" />
+		<Option platforms="Windows;Unix;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="System/;System/Resources/;MainWindow/;LineEdit/;ListView/;" />
+		<Option show_notes="1">
+			<notes>
+				<![CDATA[Project uses the following libraries:
+-Qt 4.8.5 ( http://qt-project.org )
+-libgdiplus ( https://github.com/mono/libgdiplus )]]>
+			</notes>
+		</Option>
+		<Build>
+			<Target title="win32-debug">
+				<Option platforms="Windows;" />
+				<Option output="bin/PhotoSorter-debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/win32/debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-static" />
+					<Add library="$(#qt4.lib)/QtCore4.dll" />
+					<Add library="$(#qt4.lib)/QtGui4.dll" />
+					<Add library="libgdiplus" />
+				</Linker>
+			</Target>
+			<Target title="win32-release">
+				<Option platforms="Windows;" />
+				<Option output="bin/PhotoSorter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/win32/release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static" />
+					<Add library="$(#qt4.lib)/QtCore4.dll" />
+					<Add library="$(#qt4.lib)/QtGui4.dll" />
+					<Add library="libgdiplus" />
+				</Linker>
+			</Target>
+			<Target title="win32-release(gui)">
+				<Option platforms="Windows;" />
+				<Option output="bin/PhotoSorter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/win32/release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static" />
+					<Add library="$(#qt4.lib)/QtCore4.dll" />
+					<Add library="$(#qt4.lib)/QtGui4.dll" />
+					<Add library="libgdiplus" />
+				</Linker>
+			</Target>
+			<Target title="linux-debug">
+				<Option platforms="Unix;" />
+				<Option output="bin/PhotoSorter-debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/linux/debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="linux-release">
+				<Option platforms="Unix;" />
+				<Option output="bin/PhotoSorter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/linux/release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="$(#qt4.lib)/libQtCore.so.4" />
+					<Add library="$(#qt4.lib)/libQtGui.so.4" />
+					<Add library="libgdiplus" />
+				</Linker>
+			</Target>
+			<Target title="linux-release(gui)">
+				<Option platforms="Unix;" />
+				<Option output="bin/PhotoSorter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/linux/release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="$(#qt4.include)" />
+			<Add directory="$(#qt4.include)/QtGui" />
+			<Add directory="$(#libgdiplus.include)" />
+			<Add directory="." />
+		</Compiler>
+		<Linker>
+			<Add directory="$(#qt4.lib)" />
+		</Linker>
+		<ExtraCommands>
+			<Add before="$(#qt4.bin)/uic MainWindow.ui -o generated/MainWindow_ui.h" />
+			<Add before="$(#qt4.bin)/moc MainWindow.h -o generated/MainWindow_moc.cpp" />
+			<Add before="$(#qt4.bin)/moc LineEdit.h -o generated/LineEdit_moc.cpp" />
+			<Add before="$(#qt4.bin)/moc ListView.h -o generated/ListView_moc.cpp" />
+			<Add before="$(#qt4.bin)/rcc Resources.qrc -o generated/Resources.cpp" />
+		</ExtraCommands>
+		<Unit filename="Generated/LineEdit_moc.cpp">
+			<Option virtualFolder="LineEdit/" />
+		</Unit>
+		<Unit filename="Generated/ListView_moc.cpp">
+			<Option virtualFolder="ListView/" />
+		</Unit>
+		<Unit filename="Generated/MainWindow_moc.cpp">
+			<Option virtualFolder="MainWindow/" />
+		</Unit>
+		<Unit filename="Generated/MainWindow_ui.h">
+			<Option virtualFolder="MainWindow/" />
+		</Unit>
+		<Unit filename="Generated/Resources.cpp">
+			<Option virtualFolder="System/Resources/" />
+		</Unit>
+		<Unit filename="Global.h">
+			<Option virtualFolder="System/" />
+		</Unit>
+		<Unit filename="LineEdit.cpp">
+			<Option virtualFolder="LineEdit/" />
+		</Unit>
+		<Unit filename="LineEdit.h">
+			<Option virtualFolder="LineEdit/" />
+		</Unit>
+		<Unit filename="ListView.cpp">
+			<Option virtualFolder="ListView/" />
+		</Unit>
+		<Unit filename="ListView.h">
+			<Option virtualFolder="ListView/" />
+		</Unit>
+		<Unit filename="MainWindow.cpp">
+			<Option virtualFolder="MainWindow/" />
+		</Unit>
+		<Unit filename="MainWindow.h">
+			<Option virtualFolder="MainWindow/" />
+		</Unit>
+		<Unit filename="MainWindow.ui">
+			<Option virtualFolder="MainWindow/" />
+		</Unit>
+		<Unit filename="PhotoSorter.cpp">
+			<Option virtualFolder="System/" />
+		</Unit>
+		<Unit filename="Resources.qrc">
+			<Option virtualFolder="System/Resources/" />
+		</Unit>
+		<Unit filename="Resources.rc">
+			<Option compilerVar="WINDRES" />
+			<Option virtualFolder="System/Resources/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

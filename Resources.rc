@@ -1,0 +1,61 @@
+/*******************************************************************************************
+**
+** Project: Photo Sorter
+** File: Resources.rc
+**
+** Copyright (C) 2014 techvoid.
+** All rights reserved.
+** http://sourceforge.net/projects/photosorter/
+**
+** This program is free software: you can redistribute it and/or modify it under the terms
+** of the GNU General Public License as published by the Free Software Foundation, either
+** version 3 of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+** without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+** See the GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License along with this
+** program. If not, see <http://www.gnu.org/licenses/>.
+**
+*******************************************************************************************/
+
+/*======================================== HEADERS =======================================*/
+
+#include "Global.h"
+
+#define VOS_NT_WINDOWS32    0x00040004L
+#define VFT_APP             0x00000001L
+
+/*======================================= RESOURCES ======================================*/
+
+A ICON MOVEABLE PURE LOADONCALL DISCARDABLE APP_FILEICON
+
+1 VERSIONINFO
+FILEVERSION     APP_VERSION
+PRODUCTVERSION  APP_VERSION
+FILETYPE        VFT_APP
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "040904E4"
+		 {
+			 VALUE "CompanyName",       APP_COMPANY
+			 VALUE "FileVersion",       APP_FILEVER
+			 VALUE "FileDescription",   APP_FILEDESC
+			 VALUE "InternalName",      APP_INTERNALNAME
+			 VALUE "LegalCopyright",    APP_COPYRIGHT
+			 VALUE "LegalTrademarks",   APP_TRADEMARK
+			 VALUE "OriginalFilename",  APP_ORIGINALNAME
+			 VALUE "ProductName",       APP_PRODUCTNAME
+			 VALUE "ProductVersion",    APP_PRODUCTVER
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+	     //-- language codes
+		 VALUE "Translation", 0x0809, 1252 // English (United Kingdom)
+	 }
+}
+
+/*========================================================================================*/
